@@ -52,8 +52,9 @@ function updateCart(item) {
 
 function subtractFromCart(item) {
     if (item.quantity > 0 && cart.value.includes(item)) {
+        console.log(item)
         item.quantity = '';
-        if (item.quantity === 0) {
+        if (item.quantity === '') {
             const indexToRemove = cart.value.findIndex(cartItem => cartItem.name === item.name);
             cart.value.splice(indexToRemove, 1);
         }
@@ -63,20 +64,25 @@ function subtractFromCart(item) {
 <template>
     <div class="text-gray-700">
         <input v-model="selectedItem" @input="filterItems" class="paramInput" placeholder="Название продукта" />
-        <div class="grid grid-cols-3 gap-[20px] gap-y-[50px] justify-center items-center mt-[10px] mb-[50px] text-center">
-            <div>Белки
+        <div class="grid grid-cols-3 gap-[20px] gap-y-[20px] justify-center items-center mt-[10px] mb-[30px] text-center">
+            <div class="flex flex-col justify-center items-center">
+                <div class="">Белки</div>
                 <div class="total">{{ totalProteins }}</div>
             </div>
-            <div>Жиры
+            <div class="flex flex-col justify-center items-center">
+                <div class="">Жиры</div>
                 <div class="total">{{ totalFats }}</div>
             </div>
-            <div>Углеводы
+            <div class="flex flex-col justify-center items-center">
+                <div class="">Углеводы</div>
                 <div class="total">{{ totalCarbohydrates }}</div>
             </div>
-            <div>Калорийность
+            <div class="flex flex-col justify-center items-center">
+                <div class="">Калорийность</div>
                 <div class="total">{{ totalCalories }}</div>
             </div>
-            <div>Цена
+            <div class="flex flex-col justify-center items-center">
+                <div class="">Цена</div>
                 <div class="total">{{ totalPrice }}</div>
             </div>
         </div>
@@ -98,16 +104,16 @@ function subtractFromCart(item) {
                     <div class="">{{ item.calories }}</div>
                 </div>
                 <div class="grid grid-cols-[50%,50%] gap-[5px] mt-[10px]">
-                    <input class="w-[100%] border-[1px] border-gray-500 rounded-[25px] h-[100px] px-[10px] box-border" placeholder="Количество, г" type="number" v-model="item.quantity" @input="updateCart(item)" />
-                    <input class="w-[100%] border-[1px] border-gray-500 rounded-[25px] h-[100px] px-[10px] box-border" placeholder="Цена за 100г" type="number" v-model="item.price" @input="updateCart(item)" />
+                    <input class="w-[100%] border-[1px] border-gray-500 rounded-[25px] h-[50px] px-[10px] box-border" placeholder="Количество, г" type="number" v-model="item.quantity" @input="updateCart(item)" />
+                    <input class="w-[100%] border-[1px] border-gray-500 rounded-[25px] h-[50px] px-[10px] box-border" placeholder="Цена за 100г" type="number" v-model="item.price" @input="updateCart(item)" />
                 </div>
-                <button @click="subtractFromCart(item)" class="border-[1px] border-gray-500 rounded-[100%] w-[80px] h-[80px] bg-gradient-to-r text-gray-700 active:bg-gray-500 my-[10px]">-</button>
+                <button @click="subtractFromCart(item)" class="border-[1px] border-gray-500 rounded-[100%] w-[40px] h-[40px] text-gray-700 active:bg-gray-500 my-[10px]">-</button>
             </li>
         </ul>
-        <div v-if="cart.length > 0" class="border-[1px] border-gray-500 rounded-[25px] p-[20px]">
+        <div v-if="cart.length > 0" class="border-[1px] border-gray-500 rounded-[25px] p-[20px] mt-[20px]">
             <div v-for="product of cart" class="flex items-center justify-between">
                 <div class="">{{ product.name }} - {{ product.quantity }}г </div>
-                <button @click="subtractFromCart(product)" class="border-[1px] border-gray-500 rounded-[100%] w-[50px] h-[50px] bg-gradient-to-r text-gray-700 active:bg-gray-500 my-[10px] flex justify-center items-center">-</button>
+                <button @click="subtractFromCart(product)" class="border-[1px] border-gray-500 rounded-[100%] w-[30px] h-[30px] text-gray-700 active:bg-gray-300 my-[10px] flex justify-center items-center">-</button>
             </div>
         </div>
     </div>

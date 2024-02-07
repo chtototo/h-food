@@ -7,19 +7,19 @@
 @tailwind utilities;
 
 #app {
-    @apply bg-gradient-to-r from-cyan-500 to-blue-500 h-fit text-[45px] text-gray-700
+    @apply bg-gradient-to-r from-cyan-500 to-blue-500 h-fit text-[18px] text-gray-700
 }
 
 .nav-btn {
-    @apply h-[400px] w-[400px] border-solid border-[1px] rounded-[15px] border-black bg-white shadow-gray-300 shadow-2xl active:bg-gray-200 transition-[0.2s] flex flex-col justify-center items-center text-center text-gray-500
+    @apply h-[160px] border-solid border-[1px] rounded-[15px] border-gray-500 bg-white shadow-gray-300 shadow-2xl active:bg-gray-200 transition-[0.2s] flex flex-col justify-center items-center text-center text-gray-700
 }
 
 .nav-link {
-    @apply text-gray-500 w-[100%] text-[35px] flex flex-col justify-center items-center
+    @apply text-gray-500 w-[100%] text-[15px] flex flex-col justify-center items-center
 }
 
 .sortButton {
-    @apply h-[100px] w-[150px] border-[2px] border-gray-500 rounded-[25px] active:bg-gray-200
+    @apply h-[50px] w-[60px] border-[1px] border-gray-500 rounded-[25px] active:bg-gray-200
 }
 
 .results {
@@ -27,7 +27,7 @@
 }
 
 .result {
-    @apply flex w-[100%] justify-between border-b-[1px] border-b-gray-500 items-center text-gray-700 h-[100px]
+    @apply flex w-[100%] justify-between border-b-[1px] border-b-gray-500 items-center text-gray-700 h-[70px]
 }
 
 .name {
@@ -39,11 +39,11 @@
 }
 
 .paramInput {
-    @apply h-[100px] w-[100%] border-[1px] border-black rounded-[35px] px-[25px] mb-[20px]
+    @apply h-[50px] w-[100%] border-[1px] border-black rounded-[35px] px-[15px] mb-[10px]
 }
 
 .paramGenderInput {
-    @apply h-[50px] w-[50px] mr-[10px]
+    @apply h-[20px] w-[50px]
 
 }
 
@@ -52,7 +52,7 @@
 }
 
 .calculate {
-    @apply w-[300px] h-[150px] border-[1px] border-black rounded-[40px] self-start mb-[50px] active:bg-gray-200
+    @apply w-[150px] h-[70px] border-[1px] border-black rounded-[40px] self-start mb-[50px] active:bg-gray-200
 }
 
 .gender,
@@ -65,5 +65,5 @@
 }
 
 .total {
-    @apply border-[1px] border-gray-500 rounded-[50px] h-[100px] flex justify-center items-center
+    @apply border-[1px] border-gray-500 rounded-[50px] h-[80px] w-[80px] flex justify-center items-center 
 }
