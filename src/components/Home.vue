@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <div class="grid grid-cols-2 grid-rows-4 gap-[20px] mt-[-12vh]">
+  <div class="grid grid-cols-2 grid-rows-4 gap-[20px] mt-[-14vh]">
     <RouterLink to="/products_calculator" class="nav-btn">
       Калькулятор продуктов
     </RouterLink>
